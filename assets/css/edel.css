@@ -415,15 +415,7 @@ html.intern .bild-nr{display:grid;place-items:center;position:absolute;top:.7rem
 .titel .knopf--rand-hell{background:transparent;color:#f5f1ea;border-color:rgba(245,241,234,.75)}
 .titel .knopf--rand-hell:hover{background:rgba(245,241,234,.16)}
 
-/* ---------- Signatur: Spielfeld-Linien (26.09.) ---------- */
-.marke{display:inline-flex;align-items:center;gap:10px}
-.marke-text{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis}
-.signet{width:30px;height:30px;flex:none;color:var(--cognac)}
-.kopf--auf-bild.oben .signet{color:#f5f1ea}
-@media (max-width:370px){.kopf .signet{display:none}}
-.fuss .gross{display:flex;align-items:center;gap:clamp(1rem,.6rem + 2vw,2rem)}
-.signet--gross{width:clamp(56px,40px + 4vw,88px);height:auto;aspect-ratio:1;color:var(--cognac-hell)}
-
+/* ---------- Spielfeld-Linien auf der Wand (26.09.; Signet auf Wunsch entfernt) ---------- */
 .nacht{overflow:hidden}
 .feld{position:absolute;pointer-events:none;z-index:0;fill:none;stroke:rgba(217,178,141,.55);stroke-width:1.6;vector-effect:non-scaling-stroke}
 .feld path,.feld circle{vector-effect:non-scaling-stroke}

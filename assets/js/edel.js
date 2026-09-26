@@ -66,7 +66,8 @@
   var kopf = document.querySelector('.kopf');
   var titel = document.querySelector('.titel');
   var ruf = document.querySelector('.ruf');
-  var kontaktEnde = document.querySelector('[data-ruf-ende]');
+  var kontaktEnden = document.querySelectorAll('[data-ruf-ende]');
+  var sichtbareEnden = 0;
   var titelSichtbar = !!titel;
   var kontaktSichtbar = false;
   var zeigeRuf = function () {
@@ -85,8 +86,12 @@
       // Seiten ohne Titelbild: Leiste ab dem ersten Scroll
       titelSichtbar = false; zeigeRuf();
     }
-    if (kontaktEnde) {
-      new IntersectionObserver(function (ein) { kontaktSichtbar = ein[0].isIntersecting; zeigeRuf(); }, { threshold: 0.2 }).observe(kontaktEnde);
+    if (kontaktEnden.length) {
+      var endeBeobachter = new IntersectionObserver(function (ein) {
+        ein.forEach(function (e) { sichtbareEnden += e.isIntersecting ? 1 : (e.target.dataset.warSichtbar ? -1 : 0); e.target.dataset.warSichtbar = e.isIntersecting ? '1' : ''; });
+        kontaktSichtbar = sichtbareEnden > 0; zeigeRuf();
+      }, { threshold: 0.12 });
+      Array.prototype.forEach.call(kontaktEnden, function (el) { endeBeobachter.observe(el); });
     }
   } else { titelSichtbar = false; zeigeRuf(); }
 
