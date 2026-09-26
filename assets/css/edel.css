@@ -33,7 +33,7 @@
 
   --kopf:60px;                 /* feste Höhe in px, damit scroll-padding stimmt (WCAG 2.4.11) */
   --leiste:0px;                /* Platz für die untere Leiste, nur schmal */
-  --dauer:.8s; --ease:cubic-bezier(.16,1,.3,1);
+  --dauer:1.8s; --ease:cubic-bezier(.16,1,.3,1); --ease-ruhig:cubic-bezier(.22,.61,.36,1);
   color-scheme:light;
 }
 
@@ -89,7 +89,7 @@ main:focus{outline:none}
 /* ---------- Kopf: 60 px, opak beim Scrollen, versteckt sich beim Runterscrollen ---------- */
 .kopf{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top);color:var(--tinte);
   background:var(--papier);border-bottom:1px solid var(--linie);
-  transition:transform .35s var(--ease),background .35s,border-color .35s,color .35s}
+  transition:transform .7s var(--ease),background .7s,border-color .7s,color .7s}
 .kopf .wrap{display:flex;align-items:center;gap:8px;min-height:var(--kopf);padding-inline:16px}
 @media (min-width:900px){.kopf .wrap{padding-inline:var(--rand)}}
 .marke{font:400 19px/1.15 var(--serif);text-decoration:none;margin-right:auto;min-width:0;padding:.4rem 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -168,7 +168,7 @@ body.menue-offen{overflow:hidden}
 .situationen{list-style:none;margin:2.4rem 0 0;padding:0;display:grid;gap:1rem}
 @media (min-width:720px){.situationen{grid-template-columns:repeat(2,1fr);gap:1.2rem}}
 .situationen a{display:grid;grid-template-rows:auto 1fr auto;gap:.8rem;min-height:100%;padding:1.5rem;border-radius:1rem;background:var(--papier-2);
-  text-decoration:none;border:1px solid transparent;transition:border-color .25s,transform .35s var(--ease)}
+  text-decoration:none;border:1px solid transparent;transition:border-color .8s,transform .9s var(--ease)}
 .situationen a:hover{border-color:var(--linie-stark);transform:translateY(-2px)}
 .situationen h3{font-size:1.45rem}
 .situationen p{color:var(--tinte-2);font-size:var(--t-klein);line-height:1.5}
@@ -362,7 +362,7 @@ body.menue-offen{overflow:hidden}
   color:#f5f1ea;background:rgba(29,33,36,.88);border:1px solid rgba(255,255,255,.18);
   -webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);
   box-shadow:0 12px 36px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.14);
-  transform:translateY(calc(100% + 2rem));transition:transform .4s var(--ease)}
+  transform:translateY(calc(100% + 2rem));transition:transform .9s var(--ease)}
 .ruf.sichtbar{transform:none}
 .ruf a{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:3rem;border-radius:.85rem;text-decoration:none;
   font:600 1rem/1.2 var(--sans);color:#f5f1ea;border:1px solid rgba(255,255,255,.22)}
@@ -393,7 +393,7 @@ html.intern .bild-nr{display:grid;place-items:center;position:absolute;top:.7rem
   background:#1d2124;color:#f5f1ea;font:600 .85rem/1 var(--sans);border-radius:1rem}
 
 /* Einblenden, ohne Bewegung falls gewünscht */
-.js .zeig{opacity:0;transform:translateY(1rem);transition:opacity var(--dauer) var(--ease),transform var(--dauer) var(--ease);transition-delay:var(--dl,0ms)}
+.js .zeig{opacity:0;transform:translateY(2.2rem);transition:opacity var(--dauer) var(--ease-ruhig),transform calc(var(--dauer) + .4s) var(--ease);transition-delay:calc(var(--dl,0ms) * 2.2)}
 .js .zeig.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   .js .zeig{opacity:1;transform:none;transition:none}
@@ -434,9 +434,31 @@ html.intern .bild-nr{display:grid;place-items:center;position:absolute;top:.7rem
 .feld--strafraum{width:min(120%,70rem);height:auto;aspect-ratio:800/420;left:50%;bottom:-1px;transform:translateX(-50%)}
 .feld--ecke{width:min(62vw,26rem);height:auto;aspect-ratio:1;top:0;right:0}
 /* einzeichnen, sobald sichtbar */
-.js .feld path,.js .feld circle:not(.punkt){stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s var(--ease)}
-.js .feld .punkt{opacity:0;transition:opacity .8s ease 1.6s}
+.js .feld path,.js .feld circle:not(.punkt){stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 5s var(--ease-ruhig)}
+.js .feld .punkt{opacity:0;transition:opacity 1.6s ease 3.6s}
 .js .feld.an path,.js .feld.an circle:not(.punkt){stroke-dashoffset:0}
 .js .feld.an .punkt{opacity:1}
 @media (prefers-reduced-motion:reduce){.js .feld path,.js .feld circle{stroke-dashoffset:0;transition:none}.js .feld .punkt{opacity:1;transition:none}}
 @media print{.feld{display:none}}
+
+/* ---------- Langsame Bewegung (26.09.): ruhig, nur transform und opacity ---------- */
+.situationen--glas a{transition:border-color .9s var(--ease-ruhig),background .9s var(--ease-ruhig),transform 1.1s var(--ease)}
+.situationen--glas a:hover{transform:translateY(-4px)}
+.knopf,.link,.liste a,.liste svg,.link svg{transition-duration:.6s}
+.liste a{transition:padding .9s var(--ease)}
+/* Titelbild: Foto zoomt ganz langsam zurück, Text steigt nacheinander auf */
+.js .titel>img{transform:scale(1.1);animation:titel-bild 9s var(--ease-ruhig) forwards}
+@keyframes titel-bild{to{transform:scale(1)}}
+.js .titel .ueberzeile,.js .titel h1,.js .titel .aktionen{opacity:0;transform:translateY(1.6rem);animation:titel-text 1.8s var(--ease) forwards}
+.js .titel .ueberzeile{animation-delay:.5s}
+.js .titel h1{animation-delay:.9s}
+.js .titel .aktionen{animation-delay:1.5s}
+@keyframes titel-text{to{opacity:1;transform:none}}
+.js .band-vertrauen li{opacity:0;animation:titel-text 1.6s var(--ease) forwards}
+.js .band-vertrauen li:nth-child(1){animation-delay:1.9s}
+.js .band-vertrauen li:nth-child(2){animation-delay:2.2s}
+.js .band-vertrauen li:nth-child(3){animation-delay:2.5s}
+@media (prefers-reduced-motion:reduce){
+  .js .titel>img,.js .titel .ueberzeile,.js .titel h1,.js .titel .aktionen,.js .band-vertrauen li{animation:none;opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation:none!important}}
