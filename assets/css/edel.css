@@ -136,6 +136,7 @@ body.menue-offen{overflow:hidden}
 /* ---------- Titelbild: nicht Vollbild, Text unten, dunkler Verlauf für Kontrast ---------- */
 .titel{position:relative;min-height:min(72svh,44rem);display:flex;align-items:flex-end;color:#f5f1ea;overflow:hidden;background:#3a3532}
 .titel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:44% 30%}
+@media (min-width:900px){.titel>img{object-position:50% 12%}}
 .titel::after{content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(20,18,16,.55) 0%,rgba(20,18,16,.05) 22%,rgba(20,18,16,0) 38%,rgba(20,18,16,.6) 60%,rgba(20,18,16,.9) 100%)}
 .titel .wrap{position:relative;z-index:1;padding-top:calc(var(--kopf) + 5rem);padding-bottom:clamp(2rem,1.5rem + 3vw,3.5rem)}
@@ -148,13 +149,13 @@ body.menue-offen{overflow:hidden}
   -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .titel .knopf--glas:hover{background:rgba(245,241,234,.28)}
 
-/* Vertrauensband unter dem Titel */
+/* Vertrauensband unter dem Titel: zentriert, auf jeder Breite */
 .band-vertrauen{background:var(--papier-2);border-bottom:1px solid var(--linie)}
-.band-vertrauen ul{list-style:none;margin:0;padding:1rem 0;display:grid;gap:.6rem 2rem}
-.band-vertrauen li{display:flex;gap:.7rem;align-items:flex-start;font-size:var(--t-klein);line-height:1.4;color:var(--tinte-2)}
+.band-vertrauen ul{list-style:none;margin:0 auto;padding:1.1rem var(--rand);display:grid;gap:.9rem 2rem;justify-items:center}
+.band-vertrauen li{display:flex;gap:.7rem;align-items:flex-start;text-align:left;max-width:22rem;font-size:var(--t-klein);line-height:1.4;color:var(--tinte-2)}
 .band-vertrauen li b{display:block;color:var(--tinte);font-size:1rem}
 .band-vertrauen svg{width:1.4rem;height:1.4rem;flex:none;color:var(--cognac);margin-top:.15rem}
-@media (min-width:720px){.band-vertrauen ul{grid-template-columns:repeat(3,1fr);padding:1.4rem 0}}
+@media (min-width:720px){.band-vertrauen ul{grid-template-columns:repeat(3,1fr);padding-block:1.4rem}}
 
 /* Seitenkopf ohne Bild */
 .seitenkopf{padding-top:calc(var(--kopf) + env(safe-area-inset-top) + 3rem);padding-bottom:var(--abschnitt-klein);border-bottom:1px solid var(--linie)}
