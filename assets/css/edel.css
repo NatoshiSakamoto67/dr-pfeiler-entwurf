@@ -296,17 +296,21 @@ body.menue-offen{overflow:hidden}
 .fragen details[open] summary::after{transform:rotate(225deg)}
 .fragen details p{padding:0 0 1.3rem;color:var(--tinte-2);max-width:40em}
 
-/* Anfahrt: eigene Karte + Route mit einem Klick + Google-Karte auf Wunsch */
-.anfahrt{display:grid;gap:1.2rem;margin-top:2.6rem}
-@media (min-width:900px){.anfahrt{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:1.6rem;align-items:start}}
-.karte{margin:0;padding:.55rem;display:flex;flex-direction:column;gap:.6rem}
-.karte .bild{border-radius:.8rem;aspect-ratio:3/2}
-.karte iframe{display:block;width:100%;aspect-ratio:3/2;border:0;border-radius:.8rem;background:#ddd}
-.karte figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1rem;padding:0 .5rem .2rem;font-size:var(--t-klein);color:var(--nacht-mute)}
+/* Anfahrt: große Straßenkarte, darauf der Knopf für die Google-Karte (Zwei-Klick) */
+.anfahrt{display:grid;gap:1.2rem;margin-top:1.2rem}
+@media (min-width:900px){.anfahrt{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:1.6rem;align-items:start}}
+.karte{margin:2rem 0 0;display:flex;flex-direction:column;gap:.6rem}
+.karte .bild{border-radius:1.1rem;aspect-ratio:4/3;box-shadow:0 20px 50px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.18)}
+@media (min-width:900px){.karte .bild{aspect-ratio:2/1}}
+.karte iframe{display:block;width:100%;height:100%;border:0;background:#ddd}
+.karte figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1rem;padding:.2rem .4rem 0;font-size:var(--t-klein);color:var(--nacht-mute)}
 .karte figcaption a{color:inherit}
-.karte-laden{display:flex;flex-direction:column;gap:.6rem;padding:.4rem .5rem .5rem}
-.karte-laden p{font-size:var(--t-klein);color:var(--nacht-mute);line-height:1.45}
-.karte-laden p a{color:var(--nacht-text)}
+.karte-laden{position:absolute;inset:auto 0 0 0;padding:1rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center;
+  background:linear-gradient(transparent,rgba(20,18,16,.72))}
+.karte-laden .knopf{box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.karte-laden p{font-size:var(--t-klein);color:rgba(240,235,226,.9);line-height:1.4;margin:0}
+.karte-laden p a{color:#fff}
+.karte-schliessen{align-self:flex-start;margin-top:.4rem}
 .wege-knoepfe{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
 .punkte{margin:0}
 .punkte>div{padding:1rem 0;border-bottom:1px solid var(--linie)}

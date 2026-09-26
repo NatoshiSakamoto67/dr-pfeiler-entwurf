@@ -150,12 +150,11 @@
       iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
       iframe.tabIndex = -1;
       karte.replaceChildren(iframe);
-      var hinweis = karteLaden.parentNode;
       var zurueck = document.createElement('button');
-      zurueck.type = 'button'; zurueck.className = 'knopf knopf--glas';
+      zurueck.type = 'button'; zurueck.className = 'knopf knopf--glas karte-schliessen';
       zurueck.textContent = 'Google-Karte wieder schließen';
       zurueck.addEventListener('click', function () { location.reload(); });
-      hinweis.replaceChildren(zurueck);
+      karte.parentNode.appendChild(zurueck);
       if (status) status.textContent = 'Die Google-Karte wurde geladen.';
       iframe.addEventListener('load', function () { iframe.focus(); }, { once: true });
     });

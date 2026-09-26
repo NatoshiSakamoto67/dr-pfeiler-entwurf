@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#f5f1ea">
 <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/img/leistung-sport-reha.webp" fetchpriority="high">
-<link rel="stylesheet" href="assets/css/edel.css?v=14">
+<link rel="stylesheet" href="assets/css/edel.css?v=15">
 <script>document.documentElement.className+=" js";try{if(localStorage.getItem("pfeiler-gross")==="1")document.documentElement.classList.add("gross")}catch(e){}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231d2124'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23f5f1ea' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
@@ -196,6 +196,18 @@
           <div class="aktionen" style="margin-top:1.2rem"><a class="knopf" href="https://www.google.com/maps/dir/?api=1&amp;destination=52.27784%2C10.52268&amp;travelmode=driving" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg> Route</a><a class="link" href="kontakt.html">Anfahrt und Sprechzeiten <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
         </div>
       </div>
+      <div style="margin-top:2rem"><figure class="karte zeig">
+          <div class="bild" id="karte-bild">
+            <img src="assets/img/lageplan.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Stadtplan Braunschweig-Nordstadt: die Praxis liegt an der Hamburger Straße 277 am Ringgleis, nahe Haltestelle Ludwigstraße">
+            <span class="bild-nr" aria-hidden="true">58</span>
+            <div class="karte-laden">
+              <button class="knopf" type="button" id="karte-laden" data-src="https://www.google.com/maps/embed?origin=mfe&amp;pb=!1m3!2m1!1s52.27784,10.52268!6i17!3m1!1sde!5m1!1sde"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg> Google-Karte anzeigen</button>
+              <p>Dabei werden Daten an Google übermittelt. <a href="datenschutz.html#google-maps">Datenschutz</a></p>
+            </div>
+          </div>
+          <figcaption><span>Hamburger Straße 277, Nordstadt</span><span>Karte: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap-Mitwirkende</a></span></figcaption>
+          <p class="sr-only" aria-live="polite" id="karte-status"></p>
+        </figure></div>
     </div>
   </section>
 </main>
@@ -228,6 +240,6 @@
   <a href="https://www.google.com/maps/dir/?api=1&amp;destination=52.27784%2C10.52268&amp;travelmode=driving" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg> Route <span class="sr-only">(öffnet Google Maps)</span></a>
 </nav>
 
-<script src="assets/js/edel.js?v=14" defer></script>
+<script src="assets/js/edel.js?v=15" defer></script>
 </body>
 </html>

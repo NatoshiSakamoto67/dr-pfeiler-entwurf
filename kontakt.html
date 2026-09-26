@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow"><!-- ENTWURF: vor dem Livegang entfernen -->
 <meta name="theme-color" content="#f5f1ea">
 <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/edel.css?v=14">
+<link rel="stylesheet" href="assets/css/edel.css?v=15">
 <script>document.documentElement.className+=" js";try{if(localStorage.getItem("pfeiler-gross")==="1")document.documentElement.classList.add("gross")}catch(e){}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231d2124'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23f5f1ea' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
 </head>
@@ -65,23 +65,28 @@
     <div class="wrap">
       <p class="kicker zeig">Anfahrt</p>
       <h2 id="anfahrt-t" class="zeig">So finden Sie hin.</h2>
-      <div class="anfahrt">
-        <figure class="glas karte zeig">
-          <div class="bild" id="karte-bild"><span class="bild-nr" aria-hidden="true">58</span><img src="assets/img/lageplan.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Stadtplan Braunschweig-Nordstadt: die Praxis liegt an der Hamburger Straße 277 am Ringgleis, nahe Haltestelle Ludwigstraße"></div>
-          <figcaption><span>Hamburger Straße 277, Nordstadt</span><span>Karte: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap-Mitwirkende</a></span></figcaption>
-          <div class="karte-laden">
-            <div><button class="knopf knopf--glas" type="button" id="karte-laden" data-src="https://www.google.com/maps/embed?origin=mfe&amp;pb=!1m3!2m1!1s52.27784,10.52268!6i16!3m1!1sde!5m1!1sde">Google-Karte laden</button></div>
-            <p>Erst mit diesem Klick werden Ihre IP-Adresse und Browserdaten an Google übermittelt und Google kann Cookies setzen. Mehr in der <a href="datenschutz.html#google-maps">Datenschutzerklärung</a>.</p>
+      <figure class="karte zeig">
+          <div class="bild" id="karte-bild">
+            <img src="assets/img/lageplan.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Stadtplan Braunschweig-Nordstadt: die Praxis liegt an der Hamburger Straße 277 am Ringgleis, nahe Haltestelle Ludwigstraße">
+            <span class="bild-nr" aria-hidden="true">58</span>
+            <div class="karte-laden">
+              <button class="knopf" type="button" id="karte-laden" data-src="https://www.google.com/maps/embed?origin=mfe&amp;pb=!1m3!2m1!1s52.27784,10.52268!6i17!3m1!1sde!5m1!1sde"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg> Google-Karte anzeigen</button>
+              <p>Dabei werden Daten an Google übermittelt. <a href="datenschutz.html#google-maps">Datenschutz</a></p>
+            </div>
           </div>
+          <figcaption><span>Hamburger Straße 277, Nordstadt</span><span>Karte: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap-Mitwirkende</a></span></figcaption>
           <p class="sr-only" aria-live="polite" id="karte-status"></p>
         </figure>
+      <div class="anfahrt">
         <div class="glas zeig" style="--dl:120ms">
+          <p class="kicker">Route mit einem Klick</p><p style="margin-top:.6rem">Öffnet die Navigation direkt in Ihrer Karten-App.</p><div class="wege-knoepfe"><a class="knopf" href="https://www.google.com/maps/dir/?api=1&amp;destination=52.27784%2C10.52268&amp;travelmode=driving" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg> Route in Google Maps</a><a class="knopf knopf--glas" href="https://maps.apple.com/?daddr=Hamburger+Stra%C3%9Fe+277%2C+38114+Braunschweig&amp;dirflg=d" target="_blank" rel="noopener noreferrer" hidden data-apple>Route in Apple Karten</a></div>
+        </div>
+        <div class="glas zeig" style="--dl:180ms">
           <dl class="punkte">
             <div><dt>Mit dem Auto</dt><dd>Im ehemaligen Verlagshaus der Braunschweiger Zeitung. Parkhaus direkt am Haus, Einfahrt Hamburger Straße 277. Von der A 391 über die Abfahrt Hamburger Straße stadteinwärts.</dd></div>
             <div><dt>Mit Bahn und Rad</dt><dd>Stadtbahn Linie 1 oder 2 bis zur Haltestelle Ludwigstraße, von dort wenige Minuten zu Fuß. Der Ringgleis-Radweg führt am Gebäude vorbei.</dd></div>
             <div><dt>Zugang</dt><dd>Die Praxis liegt im Erdgeschoss und ist barrierefrei erreichbar, ohne Stufen und ohne Aufzug.</dd></div>
           </dl>
-          <div class="wege-knoepfe"><a class="knopf" href="https://www.google.com/maps/dir/?api=1&amp;destination=52.27784%2C10.52268&amp;travelmode=driving" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg> Route in Google Maps</a><a class="knopf knopf--glas" href="https://maps.apple.com/?daddr=Hamburger+Stra%C3%9Fe+277%2C+38114+Braunschweig&amp;dirflg=d" target="_blank" rel="noopener noreferrer" hidden data-apple>Route in Apple Karten</a></div>
           <details class="todo"><summary>Intern</summary><p>Haltestelle (Ludwigstraße, Linie 1 und 2), Erdgeschoss und Barrierefreiheit von David am 26.09. bestätigt. Karte: fest eingebettetes OSM-Bild; Google-Karte nur nach Klick (Zwei-Klick). Google-Unternehmensprofil zeigt noch Steinweg 20, muss von Dr. Pfeiler auf Hamburger Straße 277 umgezogen werden. Foto vom Praxiseingang fehlt.</p></details>
         </div>
       </div>
@@ -156,6 +161,6 @@
   <a href="https://www.google.com/maps/dir/?api=1&amp;destination=52.27784%2C10.52268&amp;travelmode=driving" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg> Route <span class="sr-only">(öffnet Google Maps)</span></a>
 </nav>
 
-<script src="assets/js/edel.js?v=14" defer></script>
+<script src="assets/js/edel.js?v=15" defer></script>
 </body>
 </html>
