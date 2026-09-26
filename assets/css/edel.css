@@ -414,3 +414,29 @@ html.intern .bild-nr{display:grid;place-items:center;position:absolute;top:.7rem
 /* Titelbild: kein Glas, nur Kontur */
 .titel .knopf--rand-hell{background:transparent;color:#f5f1ea;border-color:rgba(245,241,234,.75)}
 .titel .knopf--rand-hell:hover{background:rgba(245,241,234,.16)}
+
+/* ---------- Signatur: Spielfeld-Linien (26.09.) ---------- */
+.marke{display:inline-flex;align-items:center;gap:10px}
+.marke-text{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.signet{width:30px;height:30px;flex:none;color:var(--cognac)}
+.kopf--auf-bild.oben .signet{color:#f5f1ea}
+@media (max-width:370px){.kopf .signet{display:none}}
+.fuss .gross{display:flex;align-items:center;gap:clamp(1rem,.6rem + 2vw,2rem)}
+.signet--gross{width:clamp(56px,40px + 4vw,88px);height:auto;aspect-ratio:1;color:var(--cognac-hell)}
+
+.nacht{overflow:hidden}
+.feld{position:absolute;pointer-events:none;z-index:0;fill:none;stroke:rgba(217,178,141,.55);stroke-width:1.6;vector-effect:non-scaling-stroke}
+.feld path,.feld circle{vector-effect:non-scaling-stroke}
+.feld .punkt{fill:rgba(217,178,141,.75);stroke:none}
+.nacht>.wrap{position:relative;z-index:1}
+.feld--mitte{width:140vw;height:auto;aspect-ratio:1/2;top:50%;right:-45vw;transform:translateY(-50%)}
+@media (min-width:900px){.feld--mitte{width:auto;height:118%;right:4%}}
+.feld--strafraum{width:min(120%,70rem);height:auto;aspect-ratio:800/420;left:50%;bottom:-1px;transform:translateX(-50%)}
+.feld--ecke{width:min(62vw,26rem);height:auto;aspect-ratio:1;top:0;right:0}
+/* einzeichnen, sobald sichtbar */
+.js .feld path,.js .feld circle:not(.punkt){stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s var(--ease)}
+.js .feld .punkt{opacity:0;transition:opacity .8s ease 1.6s}
+.js .feld.an path,.js .feld.an circle:not(.punkt){stroke-dashoffset:0}
+.js .feld.an .punkt{opacity:1}
+@media (prefers-reduced-motion:reduce){.js .feld path,.js .feld circle{stroke-dashoffset:0;transition:none}.js .feld .punkt{opacity:1;transition:none}}
+@media print{.feld{display:none}}

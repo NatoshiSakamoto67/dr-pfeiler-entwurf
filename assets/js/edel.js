@@ -119,6 +119,19 @@
     Array.prototype.forEach.call(elemente, function (el) { beobachter.observe(el); });
   }
 
+  // Spielfeld-Linien einzeichnen, wenn sie ins Bild kommen
+  var felder = document.querySelectorAll('.feld');
+  if (felder.length) {
+    if (wenigerBewegung || !('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(felder, function (f) { f.classList.add('an'); });
+    } else {
+      var feldBeobachter = new IntersectionObserver(function (ein) {
+        ein.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('an'); feldBeobachter.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      Array.prototype.forEach.call(felder, function (f) { feldBeobachter.observe(f); });
+    }
+  }
+
   // Sprungleiste der Leistungsseite
   var leiste = document.querySelector('.sprung .wrap');
   var sprungLinks = document.querySelectorAll('.sprung a');
