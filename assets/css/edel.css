@@ -386,7 +386,7 @@ body.menue-offen{overflow:hidden}
 .todo{display:none}
 /* Bildnummern sichtbar für die Abstimmung mit Dr. Pfeiler; vor dem Livegang auf display:none setzen */
 .bild-nr{display:grid;place-items:center;position:absolute;top:.7rem;left:.7rem;z-index:2;min-width:2.1rem;height:2.1rem;padding:0 .55rem;background:#1d2124;color:#f5f1ea;font:600 .9rem/1 var(--sans);border-radius:1.1rem;box-shadow:0 2px 8px rgba(0,0,0,.35)}
-.titel .bild-nr{top:auto;left:auto;right:1rem;bottom:1rem;z-index:2}
+.titel .bild-nr{top:calc(var(--kopf) + env(safe-area-inset-top) + .8rem);left:auto;right:1rem;bottom:auto;z-index:2}
 html.intern .todo{display:block;margin-top:1.2rem;border:1px dashed #b0513a;color:#8f3f2c;background:rgba(176,81,58,.06);padding:.6rem .9rem;font-size:var(--t-klein)}
 html.intern .todo summary{cursor:pointer;font-weight:600}
 html.intern .bild-nr{display:grid;place-items:center;position:absolute;top:.7rem;left:.7rem;z-index:2;min-width:2rem;height:2rem;padding:0 .5rem;
