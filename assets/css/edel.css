@@ -454,3 +454,12 @@ html.intern .bild-nr{display:grid;place-items:center;position:absolute;top:.7rem
   .js .titel>img,.js .titel .ueberzeile,.js .titel h1,.js .titel .aktionen,.js .band-vertrauen li{animation:none;opacity:1;transform:none}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation:none!important}}
+
+/* Bereiche ohne Bild: alles mittig (27.09.) */
+.bereich--zentriert .bereich-kopf{display:block;text-align:center;max-width:44rem;margin-inline:auto}
+.bereich--zentriert .bereich-kopf .nr{display:block;margin-bottom:1rem}
+.bereich--zentriert .bereich-kopf .lead{margin-inline:auto}
+.bereich--zentriert .bereich-raster{display:block;max-width:40rem;margin-inline:auto}
+.bereich--zentriert .bereich-raster>*{margin-left:0}
+.bereich--zentriert .punkte{text-align:center}
+.bereich--zentriert .todo{text-align:left}
