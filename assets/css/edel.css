@@ -336,6 +336,8 @@ body.menue-offen{overflow:hidden}
 .sprung a{flex:none;display:inline-flex;align-items:center;min-height:3rem;font:400 .95rem/1 var(--sans);text-decoration:none;border-bottom:2px solid transparent;color:var(--tinte-2)}
 .sprung a i{font-style:italic;font-family:var(--serif);color:var(--cognac);margin-right:.45rem}
 .sprung a.aktiv,.sprung a:hover{color:var(--tinte);border-color:var(--tinte)}
+.ultraschall-raster{display:grid;gap:1.6rem;margin-top:2.4rem}
+@media (min-width:700px){.ultraschall-raster{grid-template-columns:1fr 1fr;gap:2rem 1.6rem}.ultraschall-raster>:first-child{grid-column:1/-1}.ultraschall-raster>:first-child .bild{aspect-ratio:21/10}}
 .bereich{padding-block:var(--abschnitt-klein) var(--abschnitt);border-bottom:1px solid var(--linie);scroll-margin-top:calc(var(--kopf) + 4rem)}
 .bereich-kopf{display:grid;gap:1.2rem;margin-bottom:2.2rem}
 .bereich-kopf .nr{font:200 clamp(3.2rem,2rem + 5vw,6rem)/.85 var(--serif);color:var(--cognac);letter-spacing:-.04em}
