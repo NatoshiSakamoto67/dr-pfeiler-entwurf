@@ -467,3 +467,10 @@ html.intern .bild-nr{display:grid;place-items:center;position:absolute;top:.7rem
 .bereich--zentriert .bereich-raster>*{margin-left:0}
 .bereich--zentriert .punkte{text-align:center}
 .bereich--zentriert .todo{text-align:left}
+
+/* Lebenslauf „Zur Person“: Gruppen-Überschrift und engere Zeilen */
+.fakten-titel{margin:2.4rem 0 0;font:500 .8rem/1.3 var(--serif);letter-spacing:.2em;text-transform:uppercase;color:var(--cognac)}
+.fakten-titel+.fakten{margin-top:.8rem}
+.fakten--lauf div{padding:.6rem 0}
+.fakten--lauf dd{font-size:1rem}
+@media (min-width:900px){.person:has(.fakten--lauf){align-items:start}.person:has(.fakten--lauf)>figure{position:sticky;top:calc(var(--kopf) + 1.5rem)}}
